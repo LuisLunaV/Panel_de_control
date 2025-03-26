@@ -1,0 +1,17 @@
+{
+  "name": "portafolio_web_2025_vue_node",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Luis Luna Villa",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\"",
+    "build": "concurrently \"cd backend && npm run build\" \"cd frontend && npm run build\"",
+     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
