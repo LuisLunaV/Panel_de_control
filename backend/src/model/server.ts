@@ -1,5 +1,5 @@
 import express, { Request } from 'express';
-import {  authRouter, homeRouter } from '../routes/index.routes';
+import {  authRouter, homeRouter, contactoRouter } from '../routes/index.routes';
 import { dbConnection } from '../database/config.db';
 import cors from 'cors';
 import cookieParser from 'cookie-parser'
@@ -38,6 +38,8 @@ export class Server{
     // Usar las rutas definidas    
     this.app.use( this.pathsWeb.auth, authRouter);
     this.app.use( this.pathsWeb.panel, homeRouter);
+    this.app.use( this.pathsWeb.panel, contactoRouter);
+
     
     this.app.listen(this.port,()=>{
         console.log(`Servidor levantado en puerto: ${this.port}`)

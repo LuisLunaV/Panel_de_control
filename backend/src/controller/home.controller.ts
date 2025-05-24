@@ -15,9 +15,10 @@ export class HomeController {
   public addMessages = async (req: Request, res: Response): Promise<void> => {
     try {
       const body = req.body;
-      await this.homeService.allsStatusFalseHome();
 
-      const home = await this.homeService.createHome(body);
+      await this.homeService.allsStatusFalseHome(); // -> Pasamos todos los status de los registros a false 
+
+      const home = await this.homeService.createHome(body); // -> Creamos el nuevo registro con status en true
 
       res.status(201).json({
         home,
